@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppRoutes from "./components/AppRoutes";
+import { BrowserRouter as Router } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import MobileNav from "./components/MobileNav";
+import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
+import { lightTheme, darkTheme } from "./utils/theme";
+import { useState } from "react";
+
+const queryClient = new QueryClient();
 
 function App() {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const [darkMode, setDarkMode] = useState(prefersDarkMode);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const selectedTheme = darkMode ? darkTheme : lightTheme;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={selectedTheme}>
+      <QueryClientProvider client={queryClient}>
+        <div
+          className="App"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Router>
+            <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+            <AppRoutes />
+            <MobileNav />
+            <Footer darkMode={darkMode} />
+          </Router>
+        </div>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 
