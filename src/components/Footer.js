@@ -18,7 +18,7 @@ const Footer = ({ darkMode }) => {
         paddingX: { xs: "1rem", xl: "2rem" },
         borderTop: "1px solid",
         borderTopColor: (theme) => theme.palette.border.main,
-        paddingBottom: { xs: "110px", sm: "1rem", xl: "2rem" },
+        paddingBottom: { xs: "95px", sm: "1rem", xl: "2rem" },
         paddingTop: { xl: "2rem" },
       }}
     >

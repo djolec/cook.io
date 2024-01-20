@@ -141,6 +141,7 @@ const RecipeCard = ({ img, time, label, url }) => {
 
               display: "flex",
               alignItems: "center",
+              gap: "3px",
             }}
           >
             <AccessTimeIcon
