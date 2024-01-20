@@ -321,7 +321,7 @@ const RecipeDetails = () => {
 
               <Stack direction="row" spacing={2}>
                 {dietLabels?.map((label, index) => (
-                  <Box
+                  <Typography
                     key={index}
                     sx={{
                       border: "1px solid",
@@ -330,10 +330,11 @@ const RecipeDetails = () => {
                       px: "0.4rem",
                       fontSize: { xs: "1rem", xl: "1.4rem" },
                       fontFamily: "DM Sans, sans-serif",
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {label}
-                  </Box>
+                  </Typography>
                 ))}
               </Stack>
 
