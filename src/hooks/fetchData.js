@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useQuery, useInfiniteQuery } from "@tanstack/react-query";
 
-const app_id = "f6f0a034";
-const app_key = "b47bdcf0e45e5e965a9a94db234046a4";
+const app_id = process.env.REACT_APP_API_ID;
+const app_key = process.env.REACT_APP_API_KEY;
 const type = "public";
 
 // Fetch data for MealTabs in Homepage
