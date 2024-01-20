@@ -106,7 +106,7 @@ const RecipeCard = ({ img, time, label, url }) => {
           },
         }}
       >
-        <Link to={`/recipe/${dynamicPart}`}>
+        <Link to={`/recipe/${dynamicPart}`} style={{ textDecoration: "none" }}>
           <Typography
             className="label"
             sx={{
@@ -138,7 +138,9 @@ const RecipeCard = ({ img, time, label, url }) => {
             variant="body2"
             sx={{
               color: (theme) => theme.palette.text.main,
-              fontSize: { xl: "1.2rem" },
+
+              display: "flex",
+              alignItems: "center",
             }}
           >
             <AccessTimeIcon
@@ -148,7 +150,7 @@ const RecipeCard = ({ img, time, label, url }) => {
                 marginRight: { xl: "5px" },
               }}
             />
-            {time}
+            <Typography sx={{ fontSize: { xl: "1.2rem" } }}>{time}</Typography>
           </Typography>
           <IconButton
             sx={{

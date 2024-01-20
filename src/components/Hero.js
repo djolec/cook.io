@@ -134,7 +134,7 @@ const Hero = () => {
       />
       <Typography
         textAlign="center"
-        sx={{ color: "white", fontSize: "1.5rem" }}
+        sx={{ color: "white", fontSize: { xs: "0.8rem", xl: "1.5rem" } }}
         variant="body2"
       >
         Search any recipe e.g: burger, pizza, sandwich, toast

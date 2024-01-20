@@ -89,6 +89,7 @@ const RecipeFilter = () => {
         position: "fixed",
         top: { xs: "70px", xl: "120px" },
         left: "0px",
+        paddingTop: "10px",
         overflowY: "scroll",
         "&::-webkit-scrollbar": {
           display: "none",
@@ -99,13 +100,21 @@ const RecipeFilter = () => {
         sx={{
           fontSize: { xs: "1rem", xl: "1.8rem" },
           marginLeft: { xs: "1rem", xl: "2rem" },
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
         }}
         variant="subtitle1"
       >
         <FilterListIcon
           sx={{ width: "auto", height: { xs: "24px", xl: "2.2rem" } }}
-        />{" "}
-        Filters
+        />
+        <Typography
+          variant="h5"
+          sx={{ fontSize: { xs: "1.2rem", xl: "1.5rem" } }}
+        >
+          Filters
+        </Typography>
       </Typography>
       <TextField
         value={queryObj.q ? queryObj.q : ""}
@@ -302,7 +311,7 @@ const RecipeFilter = () => {
           </Accordion>
         );
       })}
-      <Box sx={{ height: { xs: "87px", xl: "120px" } }}></Box>
+      <Box sx={{ height: { xs: "110px", xl: "120px" } }}></Box>
       <Stack
         direction="row"
         width="27%"

@@ -5,7 +5,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
-import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
+import { ThemeProvider, useMediaQuery } from "@mui/material";
 import { lightTheme, darkTheme } from "./utils/theme";
 import { useState } from "react";
 

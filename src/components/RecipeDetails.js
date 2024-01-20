@@ -177,12 +177,11 @@ const RecipeDetails = () => {
                 justifyContent="space-between"
                 alignItems="start"
               >
-                <Stack direction="column" sx={{ width: "65%" }}>
+                <Stack direction="column" sx={{ width: "60%" }}>
                   <Typography
                     variant="h1"
-                    // fontSize="1.8rem"
                     fontWeight="600"
-                    sx={{ fontSize: { xs: "1.8rem", xl: "3rem" } }}
+                    sx={{ fontSize: { xs: "1.6rem", xl: "3rem" } }}
                   >
                     {label}
                   </Typography>
@@ -207,7 +206,7 @@ const RecipeDetails = () => {
                     onClick={handleGoBack}
                     sx={{
                       fontSize: { xs: "14px", xl: "1.5rem" },
-                      width: { xs: "90px", xl: "130px" },
+                      width: { xs: "85px", xl: "130px" },
                       textTransform: "none",
                       color: (theme) => theme.palette.text.main,
                       backgroundColor: (theme) => theme.palette.buttons.main,
@@ -232,7 +231,7 @@ const RecipeDetails = () => {
                         height: { xs: "20px", xl: "30px" },
                         width: "auto",
                       },
-                      width: { xs: "90px", xl: "130px" },
+                      width: { xs: "85px", xl: "130px" },
                       textTransform: "none",
                       color: (theme) => theme.palette.text.main,
                       backgroundColor: (theme) => theme.palette.buttons.main,
@@ -330,6 +329,7 @@ const RecipeDetails = () => {
                       borderRadius: "4px",
                       px: "0.4rem",
                       fontSize: { xs: "1rem", xl: "1.4rem" },
+                      fontFamily: "DM Sans, sans-serif",
                     }}
                   >
                     {label}
@@ -368,6 +368,7 @@ const RecipeDetails = () => {
                       disablePadding
                       key={index}
                       sx={{
+                        fontFamily: "DM Sans, sans-serif",
                         listStyleType: "disc",
                         display: "list-item",
                         marginLeft: "16px",

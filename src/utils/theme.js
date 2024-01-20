@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 export const lightTheme = createTheme({
   typography: {
-    fontFamily: ["serif", "sans-serif", "DM Serif Display", "DM Sans"],
+    fontFamily: ["DM Serif Display, serif", "DM Sans, sans-serif"],
   },
   palette: {
     background: {

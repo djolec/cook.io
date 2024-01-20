@@ -15,7 +15,7 @@ const Footer = ({ darkMode }) => {
       sx={{
         backgroundColor: (theme) => theme.palette.background.main,
         flexDirection: { xs: "column", sm: "row" },
-        paddingX: { xs: "24px", xl: "2rem" },
+        paddingX: { xs: "1rem", xl: "2rem" },
         borderTop: "1px solid",
         borderTopColor: (theme) => theme.palette.border.main,
         paddingBottom: { xs: "110px", sm: "1rem", xl: "2rem" },
@@ -25,7 +25,7 @@ const Footer = ({ darkMode }) => {
       <Typography
         variant="h6"
         sx={{
-          width: { xs: "220px", xl: "360px" },
+          width: { xs: "220px", xl: "310px" },
           fontSize: { xl: "2rem" },
           textAlign: { xs: "center", sm: "left" },
           color: (theme) => theme.palette.text.main,
@@ -51,7 +51,7 @@ const Footer = ({ darkMode }) => {
         )}
       </Button>
       <Link
-        sx={{ width: { xs: "220px", xl: "360px" }, height: "auto" }}
+        sx={{ width: { xs: "220px", xl: "310px" }, height: "auto" }}
         href="https://www.edamam.com/"
         target="_blank"
         rel="noreferrer"

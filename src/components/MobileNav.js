@@ -54,7 +54,7 @@ const MobileNav = () => {
         position: "fixed",
         bottom: 0,
         display: { xs: "flex", sm: "none" },
-        py: "2.5rem",
+        py: "0.5rem",
       }}
       value={value}
       onChange={(event, newValue) => {

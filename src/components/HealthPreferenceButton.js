@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HealthPreferenceButton = ({ pref }) => {
   return (
-    <Link to={`/recipes?health=${pref.toLowerCase()}`}>
+    <Link to={`/recipes?health=${pref !== "DASH" ? pref.toLowerCase() : pref}`}>
       <Button
         sx={{
           fontSize: { xs: "1rem", sm: "0.9rem", xl: "1.2rem" },
