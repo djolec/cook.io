@@ -27,8 +27,22 @@ const MobileFilter = () => {
   const [queryObj, setQueryObj] = useState({});
   const [expanded, setExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
   const navigate = useNavigate();
   const accordionArray = Object.entries(accordionNames);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      setIsFixed(scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleEnterKeyPress = (event) => {
@@ -89,6 +103,10 @@ const MobileFilter = () => {
         disabled={isDrawerOpen ? true : false}
         onClick={() => setIsDrawerOpen(true)}
         sx={{
+          zIndex: 20,
+          position: isFixed ? "fixed" : "relative",
+          bottom: isFixed ? "100px" : "auto",
+          right: isFixed ? "1rem" : "auto",
           textTransform: "none",
           color: (theme) => theme.palette.text.main,
           backgroundColor: (theme) => theme.palette.buttons.main,
@@ -122,9 +140,12 @@ const MobileFilter = () => {
             alignItems="center"
             sx={{ paddingX: "1rem" }}
           >
-            <Typography variant="subtitle1" sx={{ fontSize: "1.5rem" }}>
-              <FilterListIcon sx={{ height: "32px", width: "auto" }} /> Filters
-            </Typography>
+            <Stack direction="row" alignItems="center" gap="3px">
+              <FilterListIcon sx={{ height: "32px", width: "auto" }} />{" "}
+              <Typography variant="subtitle1" sx={{ fontSize: "1.5rem" }}>
+                Filters
+              </Typography>
+            </Stack>
             <IconButton
               sx={{
                 padding: "4px",
