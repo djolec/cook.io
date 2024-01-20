@@ -23,18 +23,18 @@ const MobileNav = () => {
   });
 
   const iconStyles = {
-    ".MuiBottomNavigationAction-label.Mui-selected": { fontSize: "1.2rem" },
-    ".MuiBottomNavigationAction-label": { fontSize: "1.2rem" },
+    ".MuiBottomNavigationAction-label.Mui-selected": { fontSize: "1rem" },
+    ".MuiBottomNavigationAction-label": { fontSize: "1rem" },
     color: (theme) => theme.palette.text.main,
     "&.Mui-selected": {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       color: (theme) => theme.palette.text.main,
     },
   };
 
   const getIconStyles = (isSelected) => ({
     width: "auto",
-    height: "40px",
+    height: "2rem",
     paddingX: isSelected ? "20px" : "0px",
     backgroundColor: isSelected
       ? (theme) => theme.palette.filterButtons.selected
@@ -50,11 +50,11 @@ const MobileNav = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         width: "100%",
-        height: "90px",
+        height: "80px",
         position: "fixed",
         bottom: 0,
         display: { xs: "flex", sm: "none" },
-        py: "0.5rem",
+        py: "0.3rem",
       }}
       value={value}
       onChange={(event, newValue) => {
