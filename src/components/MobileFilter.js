@@ -20,6 +20,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { accordionNames, filterAccordionIcons } from "../utils/constants";
+import { useTrackScroll } from "../hooks/trackScroll";
 
 const MobileFilter = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -27,22 +28,10 @@ const MobileFilter = () => {
   const [queryObj, setQueryObj] = useState({});
   const [expanded, setExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [isFixed, setIsFixed] = useState(false);
+  const isFixed = useTrackScroll();
+
   const navigate = useNavigate();
   const accordionArray = Object.entries(accordionNames);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      setIsFixed(scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const handleEnterKeyPress = (event) => {
@@ -401,7 +390,7 @@ const MobileFilter = () => {
               onClick={handleApplyFilters}
               disabled={
                 !Object.keys(queryObj).some(
-                  (key) => queryObj[key] && queryObj[key].length > 0,
+                  (key) => queryObj[key] && queryObj[key].length > 0
                 )
               }
             >

@@ -8,7 +8,7 @@ const type = "public";
 // Fetch data for MealTabs in Homepage
 const fetchMealData = (meal) => {
   return axios.get(
-    `https://api.edamam.com/api/recipes/v2/?type=${type}&app_id=${app_id}&app_key=${app_key}&mealType=${meal}`,
+    `https://api.edamam.com/api/recipes/v2/?type=${type}&app_id=${app_id}&app_key=${app_key}&mealType=${meal}`
   );
 };
 
@@ -25,7 +25,7 @@ export const useFetchMealData = (meal) => {
 // Fetch data for Homepage Cuisine
 const fetchCuisine = (cuisine) => {
   return axios.get(
-    `https://api.edamam.com/api/recipes/v2?type=${type}&app_id=${app_id}&app_key=${app_key}&cuisineType=${cuisine}`,
+    `https://api.edamam.com/api/recipes/v2?type=${type}&app_id=${app_id}&app_key=${app_key}&cuisineType=${cuisine}`
   );
 };
 
@@ -60,7 +60,7 @@ export const useFetchRecipePageData = (query) => {
 //Fetch recipe by ID
 const fetchRecipeById = (id) => {
   return axios.get(
-    `https://api.edamam.com/api/recipes/v2/${id}?type=${type}&app_id=${app_id}&app_key=${app_key}`,
+    `https://api.edamam.com/api/recipes/v2/${id}?type=${type}&app_id=${app_id}&app_key=${app_key}`
   );
 };
 

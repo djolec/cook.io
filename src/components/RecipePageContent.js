@@ -1,16 +1,33 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import RecipeCard from "./RecipeCard";
 import RecipeCardSkeleton from "./RecipeCardSkeleton";
 import { convertMinutesToHoursAndDays } from "../utils/convertTime";
+import { scrollToTop } from "../utils/scrollToTop";
 import { handleScroll } from "../utils/handleScroll";
 import { useFetchRecipePageData } from "../hooks/fetchData";
 import MobileFilter from "./MobileFilter";
+import ArrowUp from "./ArrowUp";
 
 const RecipePageContent = ({ searchQuery }) => {
+  // const [isFixed, setIsFixed] = useState(false);
+
   const { data, refetch, fetchNextPage, isFetching, isError, error } =
     useFetchRecipePageData(searchQuery);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY || document.documentElement.scrollTop;
+  //     setIsFixed(scrollY > 100);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (searchQuery) {
@@ -19,9 +36,7 @@ const RecipePageContent = ({ searchQuery }) => {
   }, [searchQuery]);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
+    scrollToTop();
 
     const scrollHandle = () => handleScroll(fetchNextPage);
     window.addEventListener("scroll", scrollHandle, {
@@ -54,6 +69,7 @@ const RecipePageContent = ({ searchQuery }) => {
           All recipes
         </Typography>
         <MobileFilter />
+        <ArrowUp />
       </Stack>
 
       <Box
