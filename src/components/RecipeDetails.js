@@ -44,7 +44,7 @@ const RecipeDetails = () => {
         const parts = recipe.url.split("/");
         const dynamicPart = parts[parts.length - 1].split("?")[0];
         return dynamicPart === id;
-      })
+      }),
     );
     refetch();
   }, []);
@@ -72,7 +72,7 @@ const RecipeDetails = () => {
     };
 
     const exists = JSON.parse(localStorage.getItem("savedRecipes")).some(
-      (recipe) => recipe.url === recipeObj.url
+      (recipe) => recipe.url === recipeObj.url,
     );
 
     if (!exists) {
@@ -82,7 +82,7 @@ const RecipeDetails = () => {
         JSON.stringify([
           ...JSON.parse(localStorage.getItem("savedRecipes")),
           recipeObj,
-        ])
+        ]),
       );
       setSavedRecipes([...savedRecipes, recipeObj]);
     } else {
@@ -91,12 +91,12 @@ const RecipeDetails = () => {
         "savedRecipes",
         JSON.stringify(
           JSON.parse(localStorage.getItem("savedRecipes")).filter(
-            (recipe) => recipe.url !== recipeObj.url
-          )
-        )
+            (recipe) => recipe.url !== recipeObj.url,
+          ),
+        ),
       );
       setSavedRecipes(
-        savedRecipes.filter((recipe) => recipe.url !== recipeObj.url)
+        savedRecipes.filter((recipe) => recipe.url !== recipeObj.url),
       );
     }
   };

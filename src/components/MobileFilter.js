@@ -401,7 +401,7 @@ const MobileFilter = () => {
               onClick={handleApplyFilters}
               disabled={
                 !Object.keys(queryObj).some(
-                  (key) => queryObj[key] && queryObj[key].length > 0
+                  (key) => queryObj[key] && queryObj[key].length > 0,
                 )
               }
             >
