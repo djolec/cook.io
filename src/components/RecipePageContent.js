@@ -11,23 +11,8 @@ import MobileFilter from "./MobileFilter";
 import ArrowUp from "./ArrowUp";
 
 const RecipePageContent = ({ searchQuery }) => {
-  // const [isFixed, setIsFixed] = useState(false);
-
   const { data, refetch, fetchNextPage, isFetching, isError, error } =
     useFetchRecipePageData(searchQuery);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollY = window.scrollY || document.documentElement.scrollTop;
-  //     setIsFixed(scrollY > 100);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   useEffect(() => {
     if (searchQuery) {

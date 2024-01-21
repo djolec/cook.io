@@ -8,6 +8,7 @@ import {
   CardActions,
   Typography,
   IconButton,
+  Box,
 } from "@mui/material";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { MdOutlineBookmark } from "react-icons/md";
@@ -25,8 +26,8 @@ const RecipeCard = ({ img, time, label, url }) => {
   useEffect(() => {
     setIsSaved(
       JSON.parse(localStorage.getItem("savedRecipes")).some(
-        (recipe) => recipe.url === url,
-      ),
+        (recipe) => recipe.url === url
+      )
     );
   });
 
@@ -39,7 +40,7 @@ const RecipeCard = ({ img, time, label, url }) => {
     };
 
     const exists = JSON.parse(localStorage.getItem("savedRecipes")).some(
-      (recipe) => recipe.url === url,
+      (recipe) => recipe.url === url
     );
 
     if (!exists) {
@@ -49,7 +50,7 @@ const RecipeCard = ({ img, time, label, url }) => {
         JSON.stringify([
           ...JSON.parse(localStorage.getItem("savedRecipes")),
           recipeObj,
-        ]),
+        ])
       );
       setSavedRecipes([...savedRecipes, recipeObj]);
     } else {
@@ -58,12 +59,12 @@ const RecipeCard = ({ img, time, label, url }) => {
         "savedRecipes",
         JSON.stringify(
           JSON.parse(localStorage.getItem("savedRecipes")).filter(
-            (recipe) => recipe.url !== recipeObj.url,
-          ),
-        ),
+            (recipe) => recipe.url !== recipeObj.url
+          )
+        )
       );
       setSavedRecipes(
-        savedRecipes.filter((recipe) => recipe.url !== recipeObj.url),
+        savedRecipes.filter((recipe) => recipe.url !== recipeObj.url)
       );
     }
   };
@@ -134,8 +135,7 @@ const RecipeCard = ({ img, time, label, url }) => {
             justifyContent: "space-between",
           }}
         >
-          <Typography
-            variant="body2"
+          <Box
             sx={{
               color: (theme) => theme.palette.text.main,
 
@@ -152,7 +152,7 @@ const RecipeCard = ({ img, time, label, url }) => {
               }}
             />
             <Typography sx={{ fontSize: { xl: "1.2rem" } }}>{time}</Typography>
-          </Typography>
+          </Box>
           <IconButton
             sx={{
               color: (theme) => theme.palette.icons.main,

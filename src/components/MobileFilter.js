@@ -94,7 +94,7 @@ const MobileFilter = () => {
         sx={{
           zIndex: 20,
           position: isFixed ? "fixed" : "relative",
-          bottom: isFixed ? "100px" : "auto",
+          bottom: isFixed ? "170px" : "auto",
           right: isFixed ? "1rem" : "auto",
           textTransform: "none",
           color: (theme) => theme.palette.text.main,

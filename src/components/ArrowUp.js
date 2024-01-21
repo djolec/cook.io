@@ -13,7 +13,7 @@ const ArrowUp = () => {
       sx={{
         display: isFixed ? "block" : "none",
         position: "fixed",
-        bottom: "150px",
+        bottom: "100px",
         right: "1rem",
         zIndex: 10,
         height: "3.2rem",

@@ -96,9 +96,8 @@ const RecipeFilter = () => {
         },
       }}
     >
-      <Typography
+      <Box
         sx={{
-          fontSize: { xs: "1rem", xl: "1.8rem" },
           marginLeft: { xs: "1rem", xl: "2rem" },
           display: "flex",
           alignItems: "center",
@@ -115,7 +114,7 @@ const RecipeFilter = () => {
         >
           Filters
         </Typography>
-      </Typography>
+      </Box>
       <TextField
         value={queryObj.q ? queryObj.q : ""}
         onFocus={handleFocus}
@@ -368,7 +367,7 @@ const RecipeFilter = () => {
           onClick={handleApplyFilters}
           disabled={
             !Object.keys(queryObj).some(
-              (key) => queryObj[key] && queryObj[key].length > 0,
+              (key) => queryObj[key] && queryObj[key].length > 0
             )
           }
         >
