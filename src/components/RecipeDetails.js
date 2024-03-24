@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useContext, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
 import RecipeDetailsSkeleton from "./RecipeDetailsSkeleton";
 import { useFetchRecipeById } from "../hooks/fetchData";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
@@ -158,20 +159,29 @@ const RecipeDetails = () => {
               width: { xs: "100%", sm: "32%" },
               height: "fit-content",
               borderRadius: "15px",
+              backgroundColor: "#1A1A1A",
             }}
           >
-            <CardMedia
-              height="300"
-              width="300"
-              sx={{
-                height: "auto",
-                width: "100%",
-                backgroundColor: "#1A1A1A",
-              }}
-              image={url}
-              component="img"
-              alt="recipe image"
-            />
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              sx={{ backgroundColor: "#1A1A1A" }}
+            >
+              <CardMedia
+                height="300"
+                width="300"
+                sx={{
+                  height: "auto",
+                  width: "100%",
+                  backgroundColor: "#1A1A1A",
+                }}
+                src={url}
+                component="img"
+                alt="recipe image"
+              />
+            </Box>
           </Card>
 
           <Box sx={{ width: { xs: "100%", sm: "45%" } }}>
