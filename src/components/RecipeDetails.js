@@ -166,8 +166,9 @@ const RecipeDetails = () => {
               sx={{
                 height: "auto",
                 width: "100%",
+                backgroundColor: "#1A1A1A",
               }}
-              src={url}
+              image={url}
               component="img"
               alt="recipe image"
             />
