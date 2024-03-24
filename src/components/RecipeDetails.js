@@ -161,8 +161,8 @@ const RecipeDetails = () => {
             }}
           >
             <CardMedia
-              height={height}
-              width={width}
+              height="300"
+              width="300"
               sx={{
                 height: "auto",
                 width: "100%",
