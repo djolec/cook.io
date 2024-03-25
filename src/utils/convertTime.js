@@ -12,14 +12,14 @@ export const convertMinutesToHoursAndDays = (minutes) => {
   if (days > 0) {
     result += `${days}d`;
     if (remainingHours > 0 || remainingMinutes > 0) {
-      result += " and";
+      result += " ";
     }
   }
 
   if (remainingHours > 0) {
     result += ` ${remainingHours}h`;
     if (remainingMinutes > 0) {
-      result += " and";
+      result += " ";
     }
   }
 

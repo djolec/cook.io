@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
+  Box,
   Typography,
   TextField,
   InputAdornment,
@@ -36,8 +37,7 @@ const Hero = () => {
   };
 
   return (
-    <Container
-      maxWidth={false}
+    <Box
       sx={{
         marginTop: { xs: "80px", xl: "120px" },
         height: { xs: "400px", xl: "550px" },
@@ -139,7 +139,7 @@ const Hero = () => {
       >
         Search any recipe e.g: burger, pizza, sandwich, toast
       </Typography>
-    </Container>
+    </Box>
   );
 };
 

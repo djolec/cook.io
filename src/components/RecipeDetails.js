@@ -184,7 +184,13 @@ const RecipeDetails = () => {
             </Box>
           </Card>
 
-          <Box sx={{ width: { xs: "100%", sm: "45%" } }}>
+          <Box
+            component={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            sx={{ width: { xs: "100%", sm: "45%" } }}
+          >
             <Stack direction="column" spacing={3}>
               <Stack
                 spacing={1}
